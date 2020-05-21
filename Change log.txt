@@ -1,0 +1,14 @@
+Change log
+
+1. Add some explanations and citations of nouns that appear for the first time, such as Mirai
+2. Add picture explanations in picture captions
+3. Add section of IoT network protocol (2.1.1) in IoT technology
+4. Remove some terms and concepts that have little relationship with this project and are confusing, such as IoT-WM
+5. Attach some possible solutions in section "Threats and Vulnerability"
+6. Add explanation for NAT and UPnP
+7. Change position of Kitsune NIDS with more detailed description
+8. All "IOT" have been changed to "IoT"
+9. Update some typography
+10. Modify some wording issues
+11. The description order of approaches is changed, and we re-classified the approaches as rule-based and anomaly-based IDS
+12. Add details to each type of IDS
