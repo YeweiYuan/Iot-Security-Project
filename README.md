@@ -1,6 +1,6 @@
 ### IoT Cyber Security Analysis and R&D Investigation
 
-**If you need to use this for academic purposes, please contact the author： yuanyw3@gmail.com
+** If you need to use this for academic purposes, please contact the author： yuanyw3@gmail.com
 
 
 Accroding to Statista, the total installed base of connected devices is expected to reach 75.44 billion by 2025, which means that it will increase five-fold in ten years\cite{statista}. These massive and rapidly increasing devices connected through the Internet have created the Internet of Things (IoT). The IoT landscape includes Industrial Internet of Things (IIoT) and Industrial Control System (ICS) in the context of Information Technology (IT) and Operational Technologies (OTs). IoT devices are now ubiquitous and widely used in smart cities, homes, manufacturing, automotive, transportation and logistics, retail, public sector and healthcare.
