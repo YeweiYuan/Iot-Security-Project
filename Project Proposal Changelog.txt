@@ -1,4 +1,4 @@
-Change log
+Changelog
 
 1. Add some explanations and citations of nouns that appear for the first time, such as Mirai
 2. Add picture explanations in picture captions
