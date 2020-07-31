@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Report1</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = ''><h3><a name="webcam-project-phase1" class="md-header-anchor"></a><span>Webcam Project Phase1</span></h3><p>&nbsp;</p><p><strong><span>Webcam recognition</span></strong></p><p><span>The first step in the research of webcams is to accurately identify webcams and their models among a large number of IPs, which is also the key to vulnerability detection.  Port-based identification is very effective in most cases. The port is used as a service mark and can be used as a criterion for judging whether to run a certain service. At the same time, different types of devices often have certain characteristics due to their service characteristics. Therefore, port characteristics can be used as an important reference for device identification. RTSP (Real-time Streaming Protocol) service is a real-time multimedia streaming protocol used to control sound or video. It can establish and control one or more time-synchronized continuous streaming media, but it does not particularly emphasize time synchronization requirements, so it is more capable Tolerant of network delay, usually used for network camera equipment, its service port is generally 554. For a large number of known web camera devices, using nmap scanning software can find that most of the web camera devices have opened port 554 and run RTSP services. Therefore, port 554 and the corresponding RTSP service can be used as a fingerprint feature of a general-purpose webcam device. As long as port 554 is turned on, the device can be considered as a webcam device. </span></p><p><span>Nmap scanning result:</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200729212952082.png" alt="image-20200729212952082" style="zoom: 50%;" /></p><hr /><p><strong><span>Information of the webcam used in our experiments</span></strong></p><p><span>In essence, a webcam is an embedded system with video streaming function which is often an embedded Linux operating system. The webcam&#39;s related functions are realized by building a server and running related applications. The webcam used in our experiments, ieGeek 2.0 Mega Pixels IP Camera, can be seen used both Linux 2.6.32 and Linux 3.10 by Nmap scanning.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200729194922216.png" alt="image-20200729194922216" style="zoom:80%;" /></p><p><span>There are many ways for webcams to provide video services, and different connection methods use different ports. </span></p><p><span>A classic way is to use a web interface to display video images on a web page. Similar to the process of setting up a router, devices on the same network segment can enter the IP address of the camera in the browser address bar to realize the use and setting of the camera. In this way, we can obtain a lot of information about our equipment and set the equipment (default value and can be changed):</span></p><ul><li><p><span>User name and password: admin/admin</span></p></li><li><p><span>Network port:</span></p><ul><li><span>HTTP Port number: 80</span></li><li><span>RTSP Port: 554</span></li><li><span>RTMP Port: 1935 (PTSP permission check: off)</span></li></ul></li><li><p><span>Remote access: </span></p><ul><li><span>Main DDNS and 3th DDNS: off</span></li><li><span>uPnP Port Forwarding: off</span></li></ul></li><li><p><span>Onvif: on</span></p><ul><li><span>Server Port: 8080</span></li><li><span>Purview: No check</span></li><li><span>Time and Image Settings: Prohibit</span></li><li><span>NVC Type: Normal</span></li></ul></li><li><p><span>P2P: Enable and UID: AACC-264381-AEFFD</span></p></li><li><p><span>More device information and system log</span></p></li></ul><p><span>Most of these initial settings about the network can only be seen and modified in this way. However, the current webcam provides a quick access method, and customers generally do not enter this page when using it. Most of the existing client applications can scan the network and find a P2P-enabled webcam, then connect it within a few seconds.</span></p><p><span>The user manual device used in this experiment only provides how to use the default mobile app, CamHiPro, to connect and use the camera. And these mobile apps including several commonly used webcam apps downloaded from the Google Store often only provide simple image settings. Therefore, users may unknowingly use some functional protocols like Onvif that have vulnerability. In the experiment,  although the apps provided in the user manual require account and password connections, some apps can still connect directly to the same network without a password through the Onvif function of the webcam.</span></p><p><span>At the same time, we see that the camera has a weak password. The initial default passwords of webcams are very simple and you can find the initial passwords of these manufacturers online, most of which are admin/admin.</span></p><p><span>The initial state of our device does not open remote access and uPnP, we will also open these two functions in the experiment for research.</span></p><hr /><p><strong><span>Traffic capture</span></strong></p><p><span>Since the previous process of using Wireshark on windows and various windows packet capture software will always be accompanied by various problems, we replaced all the experimental computer systems with Ubuntu Linux. </span></p><p><span>We first use a computer as a router to launch a hot spot and connect the webcam to this network, so that we can get all the traffic of the webcam. After that, use Wireshark to obtain the data traffic of the camera by filtering the IP address and MAC address of the webcam under different circumstances. </span></p><p><span>In order to study all the service protocols and ports provided by the webcam, in addition to the web connection method mentioned above, we also used the mobile phone application CamHipro provided in the user manual, and the PC software HiP2P Client provided by the ieGeek official website. The above several clients provide HTTP, TCP, RTMP and UDP transmission methods. At the same time, the popular tinyCam in the Google Store has also been used. It not only has many functions for viewing and modifying device information, but also supports P2P and Onvif. It can switch freely between TCP-based RTSP and UDP-based RTSP. The cloud service provided by tinyCam pro version can be used as follow-up research. </span></p><ul><li><p><span>Normal Traffic</span></p><p><span>Data collection at this stage has been completed. We obtained the traffic generated by the camera only connecting to the network and connecting with each client.</span></p></li><li><p><span>Abnormal Traffic</span></p><ul><li><span>Currently we only get the traffic of ARP spoofing that uses Dsniff </span></li></ul></li><li><p><span>Key addresses:</span></p><ul><li><span>Router:  LiteonTe_16:d0:7f (ac:e0:10:16:d0:7f)/10.42.0.1</span></li><li><span>Webcam: Shenzhen_b8:68:7a (7c:a7:b0:b8:68:7a)/10.42.0.22</span></li></ul></li></ul><hr /><p><strong><span>Traffic(without client) Analysis </span></strong></p><ul><li><p><span>Using Wireshark tools</span></p><ul><li><p><span>Webcam access to the network: </span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200730230444323.png" alt="image-20200730230444323" style="zoom: 33%;" /></p></li><li><p><span>Internet-connected camera:</span></p><p><span>This process was found to be an independent operating system that is not affected by the client, so it can be analyzed first. In this process, the webcam mainly uses the UDP protocol to interact with three Alibaba Cloud servers, and there are a few ARP, ICMP,TCP, and DNS packets. These packages were found to have obvious regularity.</span></p><p><span>The first is the periodicity of UDP packets.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200730234046876.png" referrerpolicy="no-referrer" alt="image-20200730234046876"></p><p><span>The I/O gragh shows that the communication between the camera and the three servers is about once every 60 seconds basically. And this scheduled UDP transmission is a fixed program. The interactive activities in each cycle are the same. Moreover, in the process of this period of 60 seconds, we can see that there are two different programs with an interval of 20 seconds(same servers, different activities). The picture shows a cycle. Every cycle is the same. 1 to 12 is the first &quot;big&quot; program and 13 to 22 is the second &quot;small&quot; program. These programs are likely to be used to check device status and updates.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200731002717774.png" alt="image-20200731002717774" style="zoom: 50%;" /></p><p><span>If you look closely, you can also find that there will be two such interactions including both &quot;big&quot; and &quot;small&quot; programs next to each other every five minutes, a big cycle, which can be shown as longer bars in the picture. </span></p><p><span>This is a process of reconnecting to the servers. Immediately after the last interaction of the last big cycle, the webcam will send ICMP packets to Ping servers and send a TCP packet to 8.8.8.8 (one for each program, the interval is still 20 seconds, they seem to be independent, so they may be separate from the two systems in the device). Long lines are also from these ICMP packets (based on UDP protocol). But the number of ICMP packets to be used is not the same each time, so we see that the lines in the I/O graph are not very neat. Then is the beginning of a new 5 minutes cycle.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200731005746938.png" alt="image-20200731005746938" style="zoom: 33%;" /></p><p><span>At the same time, 5 seconds after some &quot;big&quot; programs complete the interaction, you can see the ARP packet confirming the router location, which may have some relevance.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200731005847802.png" alt="image-20200731005847802" style="zoom: 33%;" /></p><p><span>Finally, every hour the device will send a DNS packet to the router, the query is for a time server NTP2.p2pip.net. The answer of IP address is 118.190.154.176.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200731010645327.png" alt="image-20200731010645327" style="zoom: 33%;" /></p><p><span>Then we can find the TCP packets between them followed.</span></p><p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200731010947230.png" alt="image-20200731010947230" style="zoom: 33%;" /></p></li></ul></li><li><p><span>Data Preprocessing</span></p><ul><li><p><span>Using Wireshark to export data with csv file directly</span></p></li><li><p><span>Format converting</span></p><p><span>The raw data captured from Wireshark is in .pcap or .pcapng form, thus the first step is to extract the information into .csv (or whatever that is easy to deal with) form. Although Wireshark can output .csv file, this .csv has little information for &quot;info&quot; column, and we only use it to do simple analysis relevant to packet time.</span></p><p><span>We use scapy module for python to extract information in &quot;info&quot; column. rdpcap function in scapy.all module can read packets into clear and accessible form shown below (This is a TCP packet).</span></p><blockquote><p><span>&lt;Ether  dst=ac:e0:10:16:d0:7f src=7c:a7:b0:b8:68:7a type=IPv4 |&lt;IP  version=4 ihl=5 tos=0x0 len=52 id=24745 flags=DF frag=0 ttl=64 proto=6 chksum=0xbe6c src=10.42.0.22 dst=118.190.154.176 |&lt;TCP  sport=55266 dport=30019 seq=3847346592 ack=3323370011 dataofs=8 reserved=0 flags=A window=1825 chksum=0xdbbe urgptr=0 options=[(&#39;NOP&#39;, None), (&#39;NOP&#39;, None), (&#39;Timestamp&#39;, (18921813, 596454881))] |&gt;&gt;&gt; </span></p></blockquote><p><span>Since different packets have different structure, we have to divide a whole capture file into different types of packets, and of course, doing this may lose the relation between different types of packets.</span></p></li><li><p><span>Feature selection</span></p><p><span>There are 21 features extracted from a packet. After statistical analysis, some columns are useless with std of 0, like IP version, and IP proto, since we have separated different types of packets in advance.</span></p><p><span>Finally (for UDP packets) we choose only 9 columns as features, time, length of IP part, IP id, IP ttl, IP chksum, source port, destination port , length of UDP part, and UDP chksum.</span></p></li></ul></li><li><p><span>Data analysis with python</span></p><ul><li><p><span>Packet length</span></p><p><span>We have analyzed the periodicity of UDP packets captured when webcam is connected to the network only, with no other device. First of all, we find the length of UDP packets varies in a small set, with cardinal of only 14.</span></p><p><img src="data:image/png;base64,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" referrerpolicy="no-referrer" alt="img"></p><p><span>And since the numbers of packets of length 329, 342 are almost 0, we think them as outliners. After removing these abnormal packets, we get the box plot of packets length.</span></p><p><img src="data:image/png;base64,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" referrerpolicy="no-referrer" alt="img"></p><p><span>It can be inferred from the graph that the length of most packets is between 40 to 70, and almost no packet has length above 100.</span></p></li><li><p><span>Periodicity</span></p><p><span>By observing the raw data, we have found that there seems a pattern in traffic. The webcam will send packets to 3 addresses about every 60 seconds. This can be seen in I/O graph provided in Wireshark.</span></p><p><span>To test our observation, we use DTW algorithm to check if the packets follow this pattern, and to find the period. DTW algorithm estimates the similarity of 2 time series by calculating the distance of them. We divide the traffic into a lot of time series, each with length &quot;interval&quot;. Then we estimates the similarity of adjacent time series and sum them up. If we find the correct period, this sum will achieve its minimum.</span></p><p><span>The result is shown in the figure.</span></p><p><img src="data:image/png;base64,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" referrerpolicy="no-referrer" alt="img"></p><p><span>It is very clear that the period of this pattern is 60.</span></p></li><li><p><span>Other features</span></p><p><span>As introduced in the last section, we have finally chosen 9 columns as our features. Actually, we can divide these features into 2 teams.</span></p><p><span>The first team consists of &quot;ip_len&quot;, &quot;ip_ttl&quot;, &quot;udp_len&quot;, and ip_len is always equal to udp_len+20. Features in this team vary in a small set, with cardinal of 10. They are somehow fixed for normal traffic. The figure shows the distribution of all possible udp_len.</span></p><p><img src="data:image/png;base64,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" referrerpolicy="no-referrer" alt="img"></p><p><span>The features in the other team show continuity. They vary in a wide range and can be almost every value. The box plot is shown below.</span></p><p><img src="data:image/png;base64,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" referrerpolicy="no-referrer" alt="img"></p><p><span>It is not surprising that check sum for IP and UDP show perfect symmetry, since they are hash values of information in a packet.</span></p><p><span>In conclusion, features for UDP packets are very few, and only packet times and length of packets can be used in recognition for abnormal traffic.</span></p><hr /><p><span>This report only shows the completed part of the current research. The analysis on the flow of video streams and abnormal flow has been partially completed but has not yet been shown in the form of a report. The experimental data and some codes that have been captured have been uploaded to GitHub:</span></p><p>&nbsp;</p><p><strong><span>GitHub link:</span></strong><span> </span><a href='https://github.com/YeweiYuan/Iot-Security-Project' target='_blank' class='url'>https://github.com/YeweiYuan/Iot-Security-Project</a></p></li></ul></li></ul></div>
+</body>
+</html>
